@@ -16,7 +16,7 @@ program
   .version('1.0.0')
   .requiredOption('-a, --app-path <path>', 'Path to your Next.js app directory (can be absolute or relative)')
   .option('-o, --output <path>', 'Path where to save the OpenAPI spec file (can be absolute or relative)', 'swagger-spec.json')
-  .option('-p, --port <number>', 'Port to run the Swagger UI server', '3000')
+  .option('-p, --port <number>', 'Port to run the Swagger UI server', '3333')
   .option('-s, --serve', 'Start the Swagger UI server after generating the spec', true)
   .action(async (options) => {
     try {
