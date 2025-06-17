@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { scanRoutes } from './scanner';
 import { generateSwaggerSpec } from './generator';
 import { serveDocs } from './server';

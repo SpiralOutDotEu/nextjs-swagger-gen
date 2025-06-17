@@ -2,6 +2,7 @@
   "name": "nextjs-swagger-gen",
   "version": "1.0.0",
   "description": "Generate OpenAPI Swagger specs from Next.js App Router API routes",
+  "type": "module",
   "bin": {
     "nextjs-swagger-gen": "./dist/index.js"
   },
@@ -23,7 +24,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SpiralOutDotEu/nextjs-swagger-gen.git"
+    "url": "git+https://github.com/SpiralOutDotEu/nextjs-swagger-gen.git"
   },
   "bugs": {
     "url": "https://github.com/SpiralOutDotEu/nextjs-swagger-gen/issues"
