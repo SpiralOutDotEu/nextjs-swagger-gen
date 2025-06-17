@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import { scanRoutes } from './scanner';
-import { generateSwaggerSpec } from './generator';
-import { serveDocs } from './server';
+import { scanRoutes } from './scanner.js';
+import { generateSwaggerSpec } from './generator.js';
+import { serveDocs } from './server.js';
 import fs from 'fs';
 import path from 'path';
 import { Command } from 'commander';
