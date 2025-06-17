@@ -19,16 +19,16 @@
     "typescript",
     "app-router"
   ],
-  "author": "",
+  "author": "a user",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/youruser/nextjs-swagger-gen.git"
+    "url": "https://github.com/SpiralOutDotEu/nextjs-swagger-gen.git"
   },
   "bugs": {
-    "url": "https://github.com/youruser/nextjs-swagger-gen/issues"
+    "url": "https://github.com/SpiralOutDotEu/nextjs-swagger-gen/issues"
   },
-  "homepage": "https://github.com/youruser/nextjs-swagger-gen#readme",
+  "homepage": "https://github.com/SpiralOutDotEu/nextjs-swagger-gen#readme",
   "dependencies": {
     "express": "^4.18.2",
     "fast-glob": "^3.3.1",
