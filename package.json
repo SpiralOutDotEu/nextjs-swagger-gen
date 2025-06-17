@@ -1,6 +1,6 @@
 {
   "name": "nextjs-swagger-gen",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Generate OpenAPI Swagger specs from Next.js App Router API routes",
   "type": "module",
   "bin": {
