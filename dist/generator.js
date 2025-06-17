@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateSwaggerSpec = generateSwaggerSpec;
-function generateSwaggerSpec(routes) {
+export function generateSwaggerSpec(routes) {
     const paths = {};
     for (const route of routes) {
         // Convert path parameters in the route path to OpenAPI format

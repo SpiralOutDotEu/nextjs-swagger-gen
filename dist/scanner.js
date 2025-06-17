@@ -1,12 +1,6 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.scanRoutes = scanRoutes;
-const fast_glob_1 = __importDefault(require("fast-glob"));
-const path_1 = __importDefault(require("path"));
-const fs_1 = __importDefault(require("fs"));
+import fg from 'fast-glob';
+import path from 'path';
+import fs from 'fs';
 function parseJSDoc(content) {
     const jsDocMatch = content.match(/\/\*\*([\s\S]*?)\*\//);
     if (!jsDocMatch)
@@ -104,12 +98,12 @@ function extractPathParams(routePath) {
     }
     return pathParams;
 }
-async function scanRoutes(appDir) {
-    const files = await (0, fast_glob_1.default)(['**/route.ts'], { cwd: appDir, absolute: true });
+export async function scanRoutes(appDir) {
+    const files = await fg(['**/route.ts'], { cwd: appDir, absolute: true });
     return Promise.all(files.map(async (fullPath) => {
-        const relativePath = path_1.default.relative(appDir, path_1.default.dirname(fullPath));
+        const relativePath = path.relative(appDir, path.dirname(fullPath));
         const routePath = '/' + relativePath.replace(/\\/g, '/');
-        const content = await fs_1.default.promises.readFile(fullPath, 'utf-8');
+        const content = await fs.promises.readFile(fullPath, 'utf-8');
         // Extract query parameters
         const queryParams = [];
         const searchParamsRegex = /searchParams\.get\(['"]([^'"]+)['"]\)/g;
