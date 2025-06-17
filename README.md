@@ -73,6 +73,7 @@ npx nextjs-swagger-gen -a /path/to/your/app [options]
 - `-a, --app-path <path>`: Path to your Next.js app directory (required)
 - `-o, --output <path>`: Path where to save the OpenAPI spec file (default: swagger-spec.json)
 - `-p, --port <number>`: Port to run the Swagger UI server (default: 3333)
+- `-b, --base-url <url>`: Base URL for the API (default: http://localhost:3000)
 - `-s, --serve`: Start the Swagger UI server after generating the spec (default: true)
 - `-h, --help`: Display help information
 - `-V, --version`: Display version information
@@ -85,10 +86,10 @@ Basic usage:
 npx nextjs-swagger-gen -a ./my-nextjs-app
 ```
 
-Custom output and port:
+Custom output, port, and base URL:
 
 ```bash
-npx nextjs-swagger-gen -a ./my-nextjs-app -o ./api-docs.json -p 8080
+npx nextjs-swagger-gen -a ./my-nextjs-app -o ./api-docs.json -p 8080 -b https://api.example.com
 ```
 
 Generate spec without serving:

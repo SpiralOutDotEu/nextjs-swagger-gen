@@ -19,7 +19,7 @@ interface RouteInfo {
   };
 }
 
-export function generateSwaggerSpec(routes: RouteInfo[]) {
+export function generateSwaggerSpec(routes: RouteInfo[], baseUrl: string = 'http://localhost:3000') {
   const paths: any = {};
   for (const route of routes) {
     // Convert path parameters in the route path to OpenAPI format
@@ -86,6 +86,12 @@ export function generateSwaggerSpec(routes: RouteInfo[]) {
       title: 'Next.js API',
       version: '1.0.0'
     },
+    servers: [
+      {
+        url: baseUrl,
+        description: 'API Server'
+      }
+    ],
     paths
   };
 }

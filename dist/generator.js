@@ -1,4 +1,4 @@
-export function generateSwaggerSpec(routes) {
+export function generateSwaggerSpec(routes, baseUrl = 'http://localhost:3000') {
     const paths = {};
     for (const route of routes) {
         // Convert path parameters in the route path to OpenAPI format
@@ -60,6 +60,12 @@ export function generateSwaggerSpec(routes) {
             title: 'Next.js API',
             version: '1.0.0'
         },
+        servers: [
+            {
+                url: baseUrl,
+                description: 'API Server'
+            }
+        ],
         paths
     };
 }

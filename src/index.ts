@@ -17,6 +17,7 @@ program
   .requiredOption('-a, --app-path <path>', 'Path to your Next.js app directory (can be absolute or relative)')
   .option('-o, --output <path>', 'Path where to save the OpenAPI spec file (can be absolute or relative)', 'swagger-spec.json')
   .option('-p, --port <number>', 'Port to run the Swagger UI server', '3333')
+  .option('-b, --base-url <url>', 'Base URL for the API (e.g., https://api.example.com)', 'http://localhost:3000')
   .option('-s, --serve', 'Start the Swagger UI server after generating the spec', true)
   .action(async (options) => {
     try {
@@ -35,7 +36,7 @@ program
       const routes = await scanRoutes(appPath);
       console.log(chalk.green(`✅ Found ${routes.length} API routes`));
 
-      const openapi = generateSwaggerSpec(routes);
+      const openapi = generateSwaggerSpec(routes, options.baseUrl);
 
       // Ensure the directory exists
       const outputDir = path.dirname(outputPath);
