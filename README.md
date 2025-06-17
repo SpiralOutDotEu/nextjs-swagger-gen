@@ -116,24 +116,46 @@ The tool parses JSDoc comments to enhance the API documentation. Example:
 
 ```typescript
 /**
- * API route to fetch a user's voting power within a DAO
+ * Get user's profile and activity data
  *
- * @route GET /api/[network]/[daoAddress]/voting-power
+ * @route GET /api/users/[userId]/activity
  *
  * @param {NextRequest} request - The Next.js request object
  * @param {Object} params - Route parameters
  * @param {Promise<Object>} params.params - Dynamic route parameters
- * @param {string} params.params.network - Blockchain network identifier
- * @param {string} params.params.daoAddress - Address of the DAO
+ * @param {string} params.params.userId - The unique identifier of the user
  *
- * @queryParam {string} userAddress - Ethereum address of the user (required)
- * @queryParam {string} tokenAddress - Address of the governance token (required)
+ * @queryParam {string} timezone - User's timezone for activity timestamps (required)
+ * @queryParam {string} period - Time period for activity data (e.g., 'day', 'week', 'month')
+ * @queryParam {number} limit - Maximum number of activities to return (default: 10)
  *
  * @returns {Promise<NextResponse>} JSON response containing:
- *   - On success: { success: true, data: { votingPower, daoAddress, ... } }
+ *   - On success: {
+ *       success: true,
+ *       data: {
+ *         userId: string,
+ *         activities: Array<{
+ *           id: string,
+ *           type: string,
+ *           timestamp: string,
+ *           details: object
+ *         }>,
+ *         total: number
+ *       }
+ *     }
  *   - On error: { error: string } with appropriate status code
+ *
+ * @throws {Error} If there's an issue fetching the user's activity data
  */
 ```
+
+This example shows:
+
+- Route parameters (`[userId]`)
+- Required and optional query parameters
+- Detailed response structure
+- Error handling
+- Type information for parameters and responses
 
 ## 🤝 Contributing
 
